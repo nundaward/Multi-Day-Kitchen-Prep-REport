@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="app">
       <div className="no-print">
-        <h1>Kitchen Report Breakout</h1>
+        <h1>Multi-Day Kitchen Report</h1>
 
         <FileUploader dayFiles={dayFiles} onChange={setDayFiles} />
 
