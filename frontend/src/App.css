@@ -1,0 +1,47 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.file-uploader {
+  margin-bottom: 1rem;
+}
+
+.file-uploader__input-label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.file-uploader__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.file-uploader__table td,
+.file-uploader__table th {
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #33333322;
+}
+
+.app__error {
+  color: #c0392b;
+}
+
+.parse-preview__station {
+  margin-top: 2rem;
+}
+
+.parse-preview__shift table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.parse-preview__shift th,
+.parse-preview__shift td {
+  padding: 0.35rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #33333322;
+}
