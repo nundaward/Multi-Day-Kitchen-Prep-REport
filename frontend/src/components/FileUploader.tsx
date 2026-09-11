@@ -30,7 +30,7 @@ export function FileUploader({ dayFiles, onChange }: Props) {
     <div className="file-uploader">
       <label className="file-uploader__input-label">
         Add kitchen report PDF(s)
-        <input type="file" accept="application/pdf" multiple onChange={handleFilesSelected} />
+        <input type="file" accept="application/pdf,.pdf" multiple onChange={handleFilesSelected} />
       </label>
 
       {dayFiles.length > 0 && (
