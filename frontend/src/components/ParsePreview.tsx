@@ -1,4 +1,5 @@
 import type { StationBreakout } from "../breakout";
+import { REPORT_TITLE, buildSourceNote } from "../reportMeta";
 
 interface Props {
   breakout: StationBreakout;
@@ -14,6 +15,12 @@ export function ParsePreview({ breakout, dayOrder }: Props) {
 
   return (
     <div className="parse-preview">
+      <div className="print-header">
+        <h1>{REPORT_TITLE}</h1>
+        <h2>Item Needs, {dayOrder.join(" vs. ")}</h2>
+        <p className="print-source-note">{buildSourceNote(dayOrder)}</p>
+      </div>
+
       {stations.map((station) => (
         <section key={station} className="parse-preview__station">
           <h2>{station}</h2>

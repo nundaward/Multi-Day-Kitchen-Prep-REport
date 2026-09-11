@@ -33,22 +33,28 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Kitchen Report Breakout</h1>
+      <div className="no-print">
+        <h1>Kitchen Report Breakout</h1>
 
-      <FileUploader dayFiles={dayFiles} onChange={setDayFiles} />
+        <FileUploader dayFiles={dayFiles} onChange={setDayFiles} />
 
-      <button type="button" onClick={handleParse} disabled={!canParse || loading}>
-        {loading ? "Parsing..." : "Parse reports"}
-      </button>
+        <button type="button" onClick={handleParse} disabled={!canParse || loading}>
+          {loading ? "Parsing..." : "Parse reports"}
+        </button>
 
-      {error && <p className="app__error">{error}</p>}
+        {error && <p className="app__error">{error}</p>}
 
-      {breakout && (
-        <>
-          <ExportButton breakout={breakout} dayOrder={dayOrder} />
-          <ParsePreview breakout={breakout} dayOrder={dayOrder} />
-        </>
-      )}
+        {breakout && (
+          <>
+            <ExportButton breakout={breakout} dayOrder={dayOrder} />
+            <button type="button" onClick={() => window.print()}>
+              Print / Save as PDF
+            </button>
+          </>
+        )}
+      </div>
+
+      {breakout && <ParsePreview breakout={breakout} dayOrder={dayOrder} />}
     </div>
   );
 }

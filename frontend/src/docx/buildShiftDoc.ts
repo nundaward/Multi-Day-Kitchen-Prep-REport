@@ -13,8 +13,8 @@ import {
   WidthType,
 } from "docx";
 import type { StationBreakout } from "../breakout";
+import { REPORT_TITLE, buildSourceNote } from "../reportMeta";
 
-const REPORT_TITLE = "Arlington Hts — Kitchen Report";
 const HEADER_ACCENT = "1F4E78";
 const HEADER_FILL = "D9E2F3";
 const BODY_ALT_FILL = "F2F2F2";
@@ -50,13 +50,7 @@ export function buildShiftDoc(breakout: StationBreakout, dayOrder: string[]): Do
         new TextRun({
           italics: true,
           size: 18,
-          text:
-            `Source: kitchen reports for ${dayOrder.join(", ")}. Quantities are each item's All Day total ` +
-            "as listed on the original report for the shift shown; sub-order/prep breakdown lines have been " +
-            "omitted. For Sandwich Station, quantities are each item's total across all of that shift's " +
-            "orders, summed from the order-level detail since the source report doesn't give a single bold " +
-            "total per item per shift the way the other stations do. A dash (—) means that item was not " +
-            "needed on that day for that shift.",
+          text: buildSourceNote(dayOrder),
         }),
       ],
       spacing: { after: 300 },

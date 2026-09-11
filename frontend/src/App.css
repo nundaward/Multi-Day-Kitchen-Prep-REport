@@ -45,3 +45,52 @@
   text-align: left;
   border-bottom: 1px solid #33333322;
 }
+
+.print-header {
+  display: none;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .app {
+    max-width: none;
+    padding: 0;
+  }
+
+  .print-header {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .print-header h1 {
+    margin: 0 0 0.15rem;
+  }
+
+  .print-header h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .print-source-note {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #333;
+  }
+
+  .parse-preview__station {
+    margin-top: 0;
+    page-break-before: always;
+  }
+
+  .parse-preview__station:first-child {
+    page-break-before: avoid;
+  }
+
+  .parse-preview__shift,
+  .parse-preview__shift table {
+    break-inside: avoid;
+  }
+}
