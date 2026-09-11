@@ -34,7 +34,7 @@ export function ParsePreview({ breakout, dayOrder }: Props) {
                     <tr key={row.name}>
                       <td>{row.name}</td>
                       {dayOrder.map((day) => (
-                        <td key={day}>{row.values[day] ?? 0}</td>
+                        <td key={day}>{row.values[day] ?? "—"}</td>
                       ))}
                     </tr>
                   ))}
