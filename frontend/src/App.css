@@ -89,8 +89,15 @@
     page-break-before: avoid;
   }
 
-  .parse-preview__shift,
-  .parse-preview__shift table {
+  /* Let a station's tables flow across a page if they're long -- avoiding
+     a break on the whole shift block pushed the entire thing to the next
+     page when it didn't fit, leaving a mostly-blank page behind it. Only
+     keep individual rows (and each table's header row) from splitting. */
+  .parse-preview__shift tr {
     break-inside: avoid;
+  }
+
+  .parse-preview__shift thead {
+    display: table-header-group;
   }
 }
